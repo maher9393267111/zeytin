@@ -134,7 +134,8 @@ export default function Main() {
                   // src: "/images/new/1.jpeg",
                   "data-intersection-observer-element": true,
                   "data-intersection-observer-on-intersect-add":
-                    "-translate-x-[20%] -translate-y-[25%]",
+                       "",
+                    // "-translate-x-[20%] -translate-y-[25%]",
                 },
                 // {
                 //   src: "/images/new/3.jpeg",
