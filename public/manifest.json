@@ -1,0 +1,32 @@
+{
+  "theme_color": "#d3af37",
+  "background_color": "#d3af37",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Outlet Turkey",
+  "short_name": "Outlet Turkey",
+  "description": "Outlet Turkey",
+  "icons": [
+    {
+      "src": "/logoDoc.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logoDoc.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/logoDoc.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/logoDoc.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

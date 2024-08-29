@@ -1,0 +1,262 @@
+{
+  "en": {
+    "main": "Home",
+    "dir": "ltr",
+    "header": [
+      { "title": "Home", "link": "/" },
+      { "title": "Menu", "link": "/category/all" },
+
+      { "title": "About", "link": "/about" },
+      { "title": "Contact", "link": "/contact" }
+   
+
+    ],
+
+
+    "resturant_all":{
+
+
+
+
+    }
+    ,
+
+
+    "product_details_page": {
+      "page_title": "Ürün Detayları",
+      "category": "Kategori",
+      "price": "Fiyat",
+      "date": "Basım tarihi",
+      "desc": "Ürün bilgileri",
+      "dir": "ltr"
+    },
+
+    
+
+
+
+
+    "contact_page": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send",
+      "dir": "rtl"
+    },
+
+    "product_details_page": {
+      "page_title": "Ürün Detayları",
+      "category": "Kategori",
+      "price": "Fiyat",
+      "date": "Basım tarihi",
+      "desc": "Ürün bilgileri",
+      "dir": "ltr"
+    },
+
+    "cart_page": {
+      "title": "Cart",
+      "product_cover": "Product image",
+      "product_title": "Product title",
+      "product_price": "Product price",
+
+      "product_quantity": "Quantity",
+      "product_total": "Product total price",
+      "total_all": "Total",
+      "confirm_order": "Confirm order",
+      "adress": "address"
+    },
+    "order_page": {
+      "title": "Order list",
+      "order_status": "Order status",
+      "order_total_price": "Order price",
+      "order_date": "Order date",
+      "order_print": "Print",
+
+      "single_order_title": "Order details"
+    },
+
+   "profile_page": {
+"title": "Profile page",
+"name": "Full Name",
+"email": "Email",
+"old_pass": "Old password",
+"new_pass": "New password"
+}
+
+,
+
+"register_page": {
+  "title": "Profile",
+  "name": "Full Name",
+  "email": "Email",
+  "pass": "Password",
+ "send": "Send",
+
+ "no_account":"You dont have account ? make new one",
+ "welcome_2":"Welcome in Outlet Turkey",
+ "welcome_1":"Welcome in Outlet Turkey",
+ "login":"Login",
+ "register":"Register",
+"google":"Login with google"
+
+
+},
+
+
+"login_page": {
+  "title": "Login ",
+  "name": "Full Name",
+  "email": "Email",
+  "pass": "Password",
+  "send": "Send",
+  "welcome_2":"Welcome in Outlet Turkey",
+  "welcome_1":"Welcome in Outlet Turkey",
+  "no_account":"You dont have account ? make new one",
+"forget":"Forget your password",
+"google":"Login with google"
+
+  }
+,
+
+
+"order_form": {
+  "name": "Full Name",
+  "phone": "Phone",
+  "adress": "Adress"
+  
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  },
+
+  "ar": {
+    "dir": "rtl",
+    "header": [
+      { "title": "الرئيسية", "link": "/" },
+      { "title": "المينو", "link": "/category/all" },
+      { "title": "من نحن", "link": "/about" },
+      { "title": "تواصل معنا", "link": "/contact" }
+     
+    ],
+
+
+    "order_form": {
+  "name": "الاسم الكامل",
+  "phone": "رقم الهاتف",
+  "adress": "العنوان"
+  
+
+
+  }
+,
+
+    "resturan_all":{
+
+
+      
+      
+          }
+          ,
+
+
+    "product_details_page": {
+      "page_title": "تفاصيل المنتج",
+      "category": "التصنيف",
+      "price": "السعر",
+      "date": "تاريخ النشر:",
+      "desc": "مغلومات المنتج",
+      "dir": "rtl"
+    },
+    "contact_page": {
+      "name": "الاسم الكامل",
+      "email": "البريد الالكتروني",
+      "phone": "رقم الهاتف",
+      "message": "اكتب رسالتك هنا",
+      "send": "ارسال",
+      "dir": "rtl"
+    },
+
+    "cart_page": {
+      "title": "سلة التسوق",
+      "product_cover": "صورة المنتج",
+      "product_title": "اسم المنتج",
+      "product_price": "سعر المنتج",
+
+      "product_quantity": "الكمية",
+      "product_total": "السعر الكلي للمنتج",
+      "total_all": "الإجمالي الكلي",
+      "confirm_order": "تأكيد الطلب",
+      "adress": "العنوان"
+    },
+    "order_page": {
+      "title": "قائمة الطلبات",
+      "order_status": "حالة الطلب",
+      "order_total_price": "السعر الكلي",
+      "order_date": "تاريخ الطلب",
+      "order_print": "طباعة",
+      "single_order_title": "تفاصيل الطلب"
+    },
+
+    "profile_page": {
+      "title": "الملف الشخصي",
+      "name": "الاسم الكامل",
+      "email": "البريد الالكتروني",
+      "old_pass": "كلمة السر الحالية",
+      "new_pass": "كلمة السر الجديدة"
+    
+    },
+
+    "register_page": {
+      "title": "الملف الشخصي",
+      "name": "الاسم الكامل",
+      "email": "البريد الالكتروني",
+      "pass": "كلمة السر الحالية",
+     "send": "تسجيل",
+
+     "no_account":"لديك حساب بالفعل؟ تسجيل الدخول",
+     "welcome_2":"المتجر الافضل دوما تسوق كل ماتريد",
+     "welcome_1":"مرحبا بك في Outlet Turkey",
+     "login":"تسجيل دخول",
+     "register":"حساب جديد",
+        "google":"تسجيل الدخول باستخدام جوجل"
+   
+    },
+
+
+    "login_page": {
+      "title": "حساب جديد",
+      "name": "الاسم الكامل",
+      "email": "البريد الالكتروني",
+      "pass": "كلمة السر",
+   "send": "تسجيل",
+         "welcome_2":"المتجر الافضل دوما تسوق كل ماتريد",
+     "welcome_1":"مرحبا بك في Outlet Turkey",
+     "no_account":"ليس لديك حساب؟ سجل الآن",
+     "forget":"نسيت كلمة المرور؟",
+     "google":"تسجيل الدخول باستخدام جوجل"
+    
+    }
+
+    
+
+
+
+  }
+}

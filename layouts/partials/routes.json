@@ -1,0 +1,41 @@
+{
+  "user": [
+  
+
+
+  ],
+  "admin": [
+    {
+      "id": "header.books",
+      "route": "/admin/book"
+    }
+,
+    {
+      "id": "header.addBook",
+      "route": "/admin/book/create"
+    },
+    {
+      "id": "header.categories",
+      "route": "/admin/category"
+    },
+
+    {
+      "id": "header.createCategory",
+      "route": "/admin/category/create"
+    },
+
+  
+
+
+
+
+    {
+      "id": "header.books",
+      "route": "/admin/book"
+    }
+
+
+
+ 
+  ]
+}
