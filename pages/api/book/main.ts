@@ -9,15 +9,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case "GET":
       try {
-        const { page = 1, sort, category= '', limit = 4, search = "" } = req.query;
+        const {
+          page = 1,
+          sort,
+          category = "",
+          limit = 4,
+          search = "",
+        } = req.query;
         const where = {};
 
-        console.log("REQUEST DATA START ---> 🌐 🌐🌐 🌐" , category)
+        console.log("REQUEST DATA START ---> 🌐 🌐🌐 🌐", category);
 
-
-      
-
-        
         if (search && search !== "") {
           where["title"] = { $regex: search, $options: "i" };
         }
@@ -25,9 +27,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         if (category && category !== "") {
           where["category"] = category;
         }
-
-     
-
 
         const { books, pages } = await Book.paginate({
           page,

@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           qatarprice,
           egyptprice,
           tprice,
-          emiratesprice, } = req.body;
+          emiratesprice,features } = req.body;
         const newBook = await Book.create({
           title,
           titletr,

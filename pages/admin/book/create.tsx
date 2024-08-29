@@ -16,8 +16,8 @@ import { message } from "antd";
 import { useRouter } from "next/router";
 import { db } from "@/utils/firebaseConfig";
 import { useMemo } from "react";
-import { uploadImages, deleteImages ,deleteImage } from "@/utils/getData";
-import useProducts from "@/hooks/useProducts"
+import { uploadImages, deleteImages, deleteImage } from "@/utils/getData";
+import useProducts from "@/hooks/useProducts";
 import {
   addDoc,
   collection,
@@ -30,12 +30,11 @@ import { useTranslation } from "@/context/useTranslation";
 import TextList from "@/components/SiteComponents/form/textList";
 import MultiTextList from "@/components/SiteComponents/form/MultiTextList";
 
-
 import { Rating as ReactRating } from "@smastrom/react-rating";
 
 import { Star } from "@smastrom/react-rating";
 
- const customeStyles = {
+const customeStyles = {
   itemShapes: Star,
   itemStrokeWidth: 1.3,
   activeFillColor: "#ffb23f",
@@ -43,16 +42,13 @@ import { Star } from "@smastrom/react-rating";
   inactiveStrokeColor: "#F4B740",
 };
 
-
-
 export default function BookCreatePage() {
   const { user } = useAuth({
     redirectTo: "/auth/login",
     redirectIfFound: false,
   });
 
-
-  const {mutate} = useProducts()
+  const { mutate } = useProducts();
 
   const router = useRouter();
   const { translation } = useTranslation();
@@ -77,17 +73,9 @@ export default function BookCreatePage() {
   const [file, setFile] = useState("");
   const [files, setFiles] = useState([]);
 
-
-
-
-
-
   const [form, setForm] = useState({
-
     sizes: [],
-    features:[]
-  
-
+    features: [],
   });
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -109,19 +97,15 @@ export default function BookCreatePage() {
         message.success("تم تحميل الصورة بنجاح");
       }
 
-      let images : any = []
+      let images: any = [];
 
-      if (files?.length > 0){
-       images = await uploadImages(files);
+      if (files?.length > 0) {
+        images = await uploadImages(files);
       }
 
-      if(form?.sizes?.length < 1){
-
+      if (form?.sizes?.length < 1) {
         message.error("اضف مقاس واحد على الاقل");
       }
-
-
-
 
       // await uploadFile(image, `books/cover/${uuid}${".png"}`);
 
@@ -143,13 +127,13 @@ export default function BookCreatePage() {
           storytr,
           cover: image,
           rating,
-          sizes:form.sizes,
-          features:form.features,
-          image:images 
+          sizes: form.sizes,
+          features: form?.features,
+          image: images,
         })
         .then((res) => {
           console.log(res);
-          mutate()
+          mutate();
           message.success("تم إضافة المنتج بنجاح");
           const { data } = res;
           //     router.push(`/~/book/${data}`);
@@ -164,7 +148,7 @@ export default function BookCreatePage() {
 
   if (user && user.role !== "admin") return <NotFound />;
   return (
-     <div className="cart-area !bg-whit  about-area">
+    <div className="cart-are !bg-[#ffff]  product-area">
       <Head>
         <title>إضافة منتج جديد - Outlet Turkey</title>
       </Head>
@@ -200,12 +184,6 @@ export default function BookCreatePage() {
               />
             </Grid>
 
-
-           
-
-
-
-
             <Grid item xs={12} md={6}>
               <DropDownCategories
                 setCategory={setCategory}
@@ -223,19 +201,11 @@ export default function BookCreatePage() {
                 value={price}
                 onChange={setPrice}
               />
-
-
-
             </Grid>
-
-
-
-
 
             <Grid item xs={12} md={12}>
               <TextInput
                 type="number"
-                 
                 rows={4}
                 name="story"
                 label="تقييم المنتج"
@@ -245,15 +215,13 @@ export default function BookCreatePage() {
               />
             </Grid>
 
-
             <Grid item xs={12} md={6}>
-            <TextList type="sizes" form={form} setForm={setForm} />
-</Grid>
+              <TextList type="sizes" form={form} setForm={setForm} />
+            </Grid>
 
-
-<Grid item xs={12} md={12}>
-            <MultiTextList type="features" form={form} setForm={setForm} />
-</Grid>
+            <Grid item xs={12} md={12}>
+              <MultiTextList type="features" form={form} setForm={setForm} />
+            </Grid>
 
             <Grid item xs={12} md={12}>
               <TextInput
@@ -280,27 +248,9 @@ export default function BookCreatePage() {
             </Grid>
 
             <Grid item xs={6} md={6}>
-      
-
-
-         
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
               <div>
                 <Upload
-                className=" !font-estedad"
+                  className=" !font-estedad"
                   accept="image/*"
                   maxCount={1}
                   // file is data of image will be uploaded to firebase/storage
@@ -316,40 +266,32 @@ export default function BookCreatePage() {
                 </Upload>
               </div>
 
+              <div className=" my-6">
+                <Upload
+                  className=" !font-estedad"
+                  accept="image/*"
+                  multiple
+                  // files is data of images will be uploaded to firebase/storage
+                  beforeUpload={(file) => {
+                    setFiles((prev) => [...prev, file]);
+                    return false;
+                  }}
+                  listType="picture-card"
+                  onRemove={(file) => {
+                    console.log("fileDATA", file);
+                    setFiles((prev) => {
+                      const index = prev.indexOf(file);
+                      const newFileList = prev.slice();
+                      newFileList.splice(index, 1);
+                      return newFileList;
+                    });
 
-
-              <div  className=" my-6">
-            <Upload
-            className=" !font-estedad"
-              accept="image/*"
-              multiple
-              // files is data of images will be uploaded to firebase/storage
-              beforeUpload={(file) => {
-                setFiles((prev) => [...prev, file]);
-                return false;
-              }}
-              listType="picture-card"
-              onRemove={(file) => {
-                console.log("fileDATA", file);
-                setFiles((prev) => {
-                  const index = prev.indexOf(file);
-                  const newFileList = prev.slice();
-                  newFileList.splice(index, 1);
-                  return newFileList;
-                });
-
-                console.log("files", files);
-              }}
-            >
-            تحميل الصور الفرعية
-            </Upload>
-          </div>
-
-
-
-
-
-
+                    console.log("files", files);
+                  }}
+                >
+                  تحميل الصور الفرعية
+                </Upload>
+              </div>
             </Grid>
             <Grid item xs={12} md={12}>
               <Button type="submit" variant="contained" color="primary">

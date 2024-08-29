@@ -22,6 +22,7 @@ const MultiTextList = ({ type, form, setForm }) => {
      list.push(input);
     
     setForm({ ...form, [type]: list });
+    console.log("FORM" , form)
     setInput({  title: '' , value: "", titletr:'' ,valuetr:''});
   };
 
