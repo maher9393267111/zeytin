@@ -152,7 +152,7 @@ const StaticHeader = ({}) => {
           </Link>
 
           <div className="ui simple dropdown item">
-            <Link legacyBehavior href="/category/all">
+            <Link legacyBehavior href="/category">
               {t.dir === "rtl" ? "المنتجات" : "Products"}
             </Link>
             <i className="dropdown icon"></i>
@@ -303,7 +303,7 @@ const StaticHeader = ({}) => {
           </Link>
 
           <div className="ui simple pointing left dropdown item">
-            <Link legacyBehavior href="/category/all">
+            <Link legacyBehavior href="/category">
               {t.dir !== "rtl" ? "Products" : "المنتجات"}
             </Link>
 

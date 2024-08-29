@@ -158,7 +158,7 @@ export default function Main() {
                   className={cn(
                     // "absolute inset-0 !h-full !w-full object-cover",
                     // "delay-[0.7s] transition-transform duration-700",
-                    "!w-full object-cover h-full   transition-all"
+                    "!w-full object-cover !h-full   transition-all"
                   )}
                   data-intersection-observer-unobserve-after-intersect={true}
                 />
