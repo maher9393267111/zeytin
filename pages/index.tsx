@@ -116,7 +116,10 @@ export default function Home() {
         <meta name="description" content="Outlet Turkey" />
         <meta name="keywords" content="Outlet Turkey" />
 
-        <link rel="icon" href="/logoDoc.png" sizes="256x256" />
+        <link rel="icon"
+          href="https://firebasestorage.googleapis.com/v0/b/test-2221c.appspot.com/o/logo-2.jfif?alt=media&token=8b51a5e3-9500-41ae-806e-10db8d17e38e"
+        
+        sizes="512x512" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

@@ -10,9 +10,9 @@ const HotProducts = ({ products, t, title }) => {
   return (
     <div className="grocery-products-area">
       <div className="section-title">
-        <span className="sub-title">
+        {/* <span className="sub-title">
           {t.dir === "rtl" ? "المنتجات" : "Products"}
-        </span>
+        </span> */}
         <h2>{title}</h2>
       </div>
 

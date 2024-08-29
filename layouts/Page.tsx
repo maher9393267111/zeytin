@@ -56,7 +56,7 @@ export default function Page({ children, title ,dir }: any) {
 
 
 
-    <div className=" bg-white px-3 md:px-8 mi--[100vh]">
+    <div className=" bg-whit p-3 m:px-8 mi--[100vh]">
            <motion.section
            initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
