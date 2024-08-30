@@ -1,6 +1,7 @@
 Qatar --> Bahrain
 Oman --> Kuwait
 
+https://www.dumangurme.com/haberdetay/zeytincilik-sektorunde-rekor-ustune-rekor
                 
 
 

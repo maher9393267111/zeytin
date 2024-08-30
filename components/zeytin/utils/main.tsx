@@ -59,7 +59,7 @@ const socialLinks: {
   },
 ];
 
-export default function Main() {
+export default function Main({dir}) {
   return (
     <>
       <UseInitGeneralAnimationIntersectionObserver />
@@ -79,7 +79,8 @@ export default function Main() {
           <div className="relative mx-auto flex h-full w-full max-w-main items-center justify-center text-center">
             <div className="relative flex w-11/12 flex-col gap-8 rounded-lg bg-black/10 px-8 py-16 text-xl">
               <h1 className="text-5xl">
-                مرحبًا بك في مزرعة الزيتون &ldquo;زيتونة&rdquo;
+                {dir==='rtl' ? ' مرحبًا بك في مزرعة الزيتون ' : "Welcome to the olive farm Zaytouna"}
+               
               </h1>
               <p className="leading-relaxed">
                 حيث تلتقي العناية الحديثة بالزيتون مع عراقة التقليد.
@@ -95,7 +96,7 @@ export default function Main() {
 
 
 
-              <section className="bg-white px-6 text-slate-900  container">
+              <section dir={dir ==='rtl' ? 'rtl' :'rtl'} className="bg-white px-6 text-slate-900  container">
           <div
             className={cn(
               "flex flex-col md:flex-row gap-2 md:gap-6 lg:gap-12 justify-center    after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2  pb-12 pt-36 px-2"
@@ -114,6 +115,11 @@ export default function Main() {
                   الزيتون المخلل اللذيذ، الذي يشكل جزءًا هامًا من منتجاتنا. بفضل
                   تقنيات التخليل المبتكرة، نقدم لكم تجربة متميزة مع زيتون مخلل
                   ذو نكهة رائعة ومميزة.
+
+
+
+
+
                 </p>
                 <p className="max-w-[424px] leading-relaxed">
                   نحن واثقون من أنكم ستشعرون بالفرق الكبير في كل نكهة من زيت
@@ -407,7 +413,7 @@ export default function Main() {
       </main>
       <footer className="bg-special-primary-500  bg-[#c1c686]">
         <div className="mx-auto flex max-w-main items-center justify-between px-8 py-4">
-          <Link href="/" title="home">
+          {/* <Link href="/" title="home">
             <Img
               src="/images/Screen_Shot_2023-09-15_at_12.38.49_PM-removebg-preview.png"
               alt="zaytona logo"
@@ -415,7 +421,12 @@ export default function Main() {
               height={150}
               className="h-10 w-16"
             />
-          </Link>
+          </Link> */}
+
+<span  onClick={() => window.location = 'mailto:infi@levant33.com'} className="text-xl cursor-pointer md:text-xl">
+
+infi@levant33.com
+</span>
 
           <ul className="flex items-center gap-4">
             {socialLinks.map((item) => (

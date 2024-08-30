@@ -127,7 +127,7 @@ export default function Home() {
         ></link>
       </Head>
 
-<Main/>
+<Main dir={t.dir}/>
 
 
 

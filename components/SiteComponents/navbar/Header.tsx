@@ -120,8 +120,8 @@ const StaticHeader = ({}) => {
   return (
     <div dir="ltr" className="ui grid navbar-area">
       <div className="computer tablet only row ">
-        <div className="ui inverted fixed menu navbar page grid h-[100px]">
-          <div className=" flex items-center px-2  ">
+        <div className="ui inverted fixed menu navbar page grid h-[100px] py-4">
+          {/* <div className=" flex items-center px-2  ">
             <LanguageToggle
               languages={[
                 { label: "English", value: "en", img: english },
@@ -130,7 +130,7 @@ const StaticHeader = ({}) => {
               selectedLanguage={language}
               selectLanguage={selectLanguage}
             />
-          </div>
+          </div> */}
 
           <div className=" flex items-center">
             <img
@@ -157,25 +157,20 @@ const StaticHeader = ({}) => {
             </Link>
             <i className="dropdown icon"></i>
 
-            {/* <div className="menu">
-            <Link legacyBehavior href="/category/all">
-                <a className={`item`}>
-                  {t.dir === "rtl" ? "كافة المنتجات" : " All Products"}{" "}
-                </a>
-              </Link>
-              {categories?.map(({ _id, cover, name, nametr }: any) => (
-                <Link
-                  key={uuidv4()}
-                  className="!block item"
-                  href={`/category/${_id}`}
-                >
-                  {t.dir === "rtl" ? name : nametr}
-                </Link>
-              ))}
-
-      
-            </div> */}
+        
           </div>
+
+          <div className=" flex items-center px-2  ">
+            <LanguageToggle
+              languages={[
+                { label: "English", value: "en", img: english },
+                { label: "عربي", value: "ar", img: arabic },
+              ]}
+              selectedLanguage={language}
+              selectLanguage={selectLanguage}
+            />
+          </div>
+
 
           <div className="right menu">
             {user ? (
@@ -220,6 +215,11 @@ const StaticHeader = ({}) => {
                 </Link>
               </React.Fragment>
             )}
+
+
+
+
+
             <form
               className="ui form  flex  items-center"
               onSubmit={(e: any) => {
@@ -255,7 +255,7 @@ const StaticHeader = ({}) => {
             {/* <a className="brand item">Outlet_Turkey</a> */}
             <div className=" flex items-center px-4">
               <img
-                className="h-[50px] object-cover w-[50px]  rounded-full "
+                className="h-[54px] object-cover w-[54px]  rounded-full "
                 src="https://firebasestorage.googleapis.com/v0/b/test-2221c.appspot.com/o/logo-2.jfif?alt=media&token=8b51a5e3-9500-41ae-806e-10db8d17e38e"
                 alt=""
               />
