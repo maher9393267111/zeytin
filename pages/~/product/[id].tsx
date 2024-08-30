@@ -309,7 +309,7 @@ export default function BookPage() {
                     : " Products Type:"}
                         
                        </span>
-                      <Link legacyBehavior href={`/category/${bookDetails?.category?._id}`}>
+                      <Link legacyBehavior href={`/products?query=${bookDetails?.category?._id}`}>
                         <a>
                         {troot.dir === "rtl"
                     ? bookDetails?.category?.name

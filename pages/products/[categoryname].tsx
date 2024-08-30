@@ -22,13 +22,13 @@ import Img from "@/components/zeytin/utils/img";
 
 import { useTranslation } from "@/context/useTranslation";
 
-export default function MenuALL({   }: any) {
+export default function MenuPage({ param, search }: any) {
   const router = useRouter();
 
   const [page, setPage] = useState<number>(1);
   //const category = router.query.categoryname ? router.query.categoryname   : ''
-  
-  const { data, isLoading, error } = useProducts({ page, category:"", search:"" });
+  const category = param === "all" ? "" : param;
+  const { data, isLoading, error } = useProducts({ page, category, search });
 
 
   const handlePageChange = (event: any, value: number) => {
@@ -50,8 +50,6 @@ export default function MenuALL({   }: any) {
       router.push(newUrl);
     };
   };
-
-  
 
   const { language, changeLanguage } = useLanguageContext();
 
@@ -116,3 +114,14 @@ export default function MenuALL({   }: any) {
   );
 }
 
+export const getServerSideProps = async (context: any) => {
+  const { categoryname } = context?.params;
+  const searchTerm = context?.query?.term ? context?.query?.term : "";
+
+  return {
+    props: {
+      param: categoryname,
+      search: searchTerm,
+    },
+  };
+};

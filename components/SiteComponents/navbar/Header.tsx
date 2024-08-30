@@ -57,8 +57,8 @@ const StaticHeader = ({}) => {
 
   const handleSearch = (e: any) => {
     Router.push({
-      pathname: "/category/all",
-      query: { term: search.search },
+      pathname: "/products",
+      query: { term: search.search ,query:'all' },
     });
   };
 
@@ -152,7 +152,7 @@ const StaticHeader = ({}) => {
           </Link>
 
           <div className="ui simple dropdown item">
-            <Link legacyBehavior href="/category">
+            <Link legacyBehavior href="/products">
               {t.dir === "rtl" ? "المنتجات" : "Products"}
             </Link>
             <i className="dropdown icon"></i>
@@ -303,7 +303,7 @@ const StaticHeader = ({}) => {
           </Link>
 
           <div className="ui simple pointing left dropdown item">
-            <Link legacyBehavior href="/category">
+            <Link legacyBehavior href="/products">
               {t.dir !== "rtl" ? "Products" : "المنتجات"}
             </Link>
 
