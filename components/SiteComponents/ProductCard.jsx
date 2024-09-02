@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { ImageEndpoint, defaultImage, uploadApi } from "@/utils/global";
 const HotProducts = ({ products, t, title }) => {
 
 
@@ -40,7 +40,8 @@ const HotProducts = ({ products, t, title }) => {
                     }
                 loading="lazy"
                   className=" !h-[400px]"
-                  src={product?.cover}
+                  // src={product?.cover``}
+                  src={`${ImageEndpoint}/${product?.cover}`}
                   alt={t.dir === "rtl" ? product?.title : product?.titletr}
                 />
              

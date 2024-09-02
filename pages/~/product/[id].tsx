@@ -30,7 +30,7 @@ import Link from "next/link";
 import BreadCrumb, {
   BreadCrumbItem,
 } from "@/components/SiteComponents/BreadCrumb";
-
+import { ImageEndpoint, defaultImage, uploadApi } from "@/utils/global";
 
 import { HandlePrice , HandleDolar } from "@/utils/HandlePrice";
 
@@ -173,8 +173,8 @@ export default function BookPage() {
       ? [...bookDetails?.cover]
       : [];
   const galleryItems = imagesData?.map((image, index) => ({
-    original: image,
-    thumbnail: image,
+    original:   `${ImageEndpoint}/${image}` ,
+    thumbnail: `${ImageEndpoint}/${image}` ,
     description: `Image ${index + 1}`,
   }));
 

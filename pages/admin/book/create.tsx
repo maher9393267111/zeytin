@@ -34,6 +34,8 @@ import { Rating as ReactRating } from "@smastrom/react-rating";
 
 import { Star } from "@smastrom/react-rating";
 
+const uploadApi  = "https://file-uploader-red.vercel.app";
+
 const customeStyles = {
   itemShapes: Star,
   itemStrokeWidth: 1.3,
@@ -78,6 +80,77 @@ export default function BookCreatePage() {
     features: [],
   });
 
+
+
+
+  const handleUploadImages = async (filesarray:any) => {
+    try {
+      const formData = new FormData();
+      filesarray.forEach((image:any) => {
+        formData.append("images", image);
+      });
+
+      //?size=${(size = 1200)}&&hieghtsize=${(hieghtSize = 1000)}
+      const response = await axios.post(`${uploadApi}/file/uploads`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Files Uplaoded successfully", response.data);
+
+      return response?.data?.files;
+    } catch (error) {
+      console.error("Error deleting files:", error);
+    }
+  };
+
+
+
+
+   // In your front-end code ARRAY IMAGES ADD DELETE
+   const handleDelete = async (filesToDelete:any) => {
+    try {
+      const res = await axios.post(`${uploadApi}/file/delets`, {
+        filesToDelete,
+      });
+      console.log("Files deleted successfully", res);
+    } catch (error) {
+      console.error("Error deleting files:", error);
+    }
+  };
+
+
+
+
+  const handleUploadImage2 = async (file:any ,logo:any) => {
+    try {
+      const formData = new FormData();
+
+      formData.append("image", file);
+
+
+      console.log("File Data", file);
+
+      const endpoint = logo ? `${uploadApi}/file/upload?size=1&&hieghtsize=1` : `${uploadApi}/file/upload`
+      //?size=${(size = 1200)}&&hieghtsize=${(hieghtSize = 1000)}
+      const response = await axios.post(endpoint, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("File Uplaoded successfully", response.data);
+
+      return response?.data?.file;
+    } catch (error) {
+      console.error("Error deleting files:", error);
+      return
+    
+      
+    }
+  };
+
+
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
@@ -93,14 +166,19 @@ export default function BookCreatePage() {
       }
 
       if (file) {
-        image = await uploadImages(file, true, "book");
+      //  image = await uploadImages(file, true, "book");
+      image =  await handleUploadImage2(file ,false);
         message.success("تم تحميل الصورة بنجاح");
       }
 
       let images: any = [];
 
       if (files?.length > 0) {
-        images = await uploadImages(files);
+      //  images = await uploadImages(files);
+        images = await handleUploadImages(files);
+
+
+        
       }
 
       if (form?.sizes?.length < 1) {
@@ -109,7 +187,7 @@ export default function BookCreatePage() {
 
       // await uploadFile(image, `books/cover/${uuid}${".png"}`);
 
-      //  return console.log('upload response')
+        console.log('upload response' ,image)
       await axios
         .post("/api/book", {
           title,
