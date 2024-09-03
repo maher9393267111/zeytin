@@ -154,7 +154,7 @@ export default function BookUpdatePage() {
       console.log("File Data", file);
 
       const endpoint = logo
-        ? `${uploadApi}/file/upload?size=1&&hieghtsize=1`
+      ? `${uploadApi}/file/upload?size=450&&hieghtsize=450`
         : `${uploadApi}/file/upload`;
       //?size=${(size = 1200)}&&hieghtsize=${(hieghtSize = 1000)}
       const response = await axios.post(endpoint, formData, {
@@ -194,7 +194,7 @@ export default function BookUpdatePage() {
       message.success("file && NOOOTTT image");
     }
 
-    
+
     console.log("NEWIMAGE", newimage);
 
     let imagesData;

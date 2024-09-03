@@ -119,12 +119,12 @@ export default function MenuALL({  search,catQuery }: any) {
 
 
 export const getServerSideProps = async (context: any) => {
- // const  category = !context?.query?.query === "" ? "" : context?.query?.query !== 'all' ? context?.query?.query : ''  ;
+  const  category = context?.query?.query ? context?.query?.query : "" ;
   const searchTerm = context?.query?.term ? context?.query?.term : "";
 
   return {
     props: {
-      catQuery: "" ,
+      catQuery: category === 'all' ? '' : category ,
       search: searchTerm,
     },
   };

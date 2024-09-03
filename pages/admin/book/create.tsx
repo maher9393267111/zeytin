@@ -131,7 +131,7 @@ export default function BookCreatePage() {
 
       console.log("File Data", file);
 
-      const endpoint = logo ? `${uploadApi}/file/upload?size=1&&hieghtsize=1` : `${uploadApi}/file/upload`
+      const endpoint = logo ? `${uploadApi}/file/upload?size=450&&hieghtsize=450` : `${uploadApi}/file/upload`
       //?size=${(size = 1200)}&&hieghtsize=${(hieghtSize = 1000)}
       const response = await axios.post(endpoint, formData, {
         headers: {
